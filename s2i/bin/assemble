@@ -16,13 +16,18 @@ fi
 #
 if [ "$(ls /tmp/artifacts/ 2>/dev/null)" ]; then
   echo "---> Restoring build artifacts..."
-  shopt -s dotglob
   mv /tmp/artifacts/* ./
-  shopt -u dotglob
 fi
+
+DEPLOY_DIR=/usr/local/nginx/html/
+echo "---> Set target directory to $DEPLOY_DIR ..."
 
 echo "---> Installing application source..."
 cp -Rf /tmp/src/. ./
 
 echo "---> Building application from source..."
 # TODO: Add build steps for your application, eg npm install, bundle install, pip install, etc.
+yarn install
+yarn run build
+cp build/*.* $DEPLOY_DIR 
+
