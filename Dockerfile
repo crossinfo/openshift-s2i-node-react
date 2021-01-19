@@ -15,11 +15,11 @@ LABEL io.k8s.description="Platform for building frontend" \
 RUN yum install -y pcre-devel wget net-tools gcc zlib zlib-devel make openssl-devel
 
 #ADD 下载node
-RUN curl -fSL https://nodejs.org/dist/v14.15.4/node-v14.15.4-linux-x64.tar.xz 
+RUN curl -O -C https://nodejs.org/dist/v14.15.4/node-v14.15.4-linux-x64.tar.xz 
 RUN tar -xJvf node-v14.15.4-linux-x64.tar.xz
 
 #ADD  下载nginx
-RUN curl -fSL http://nginx.org/download/nginx-1.15.3.tar.gz 
+RUN curl -O -C http://nginx.org/download/nginx-1.15.3.tar.gz 
 RUN tar -zxvf nginx-1.15.3.tar.gz
 RUN mkdir -p /usr/local/nginx
 RUN cd nginx-1.15.3 && ./configure && make && make install
