@@ -33,8 +33,8 @@ RUN rm /usr/local/nginx/conf/nginx.conf
 ADD conf/nginx.conf /usr/local/nginx/conf/
  
 #ADD RESOUCES 添加静态资源
-#RUN rm /usr/local/nginx/html/index.html
-#RUN mkdir -p /usr/local/nginx/html/static
+RUN rm /usr/local/nginx/html/index.html
+RUN mkdir -p /usr/local/nginx/html/static
 #COPY dist/ /usr/local/nginx/html/static
  
 
