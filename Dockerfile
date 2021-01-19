@@ -44,16 +44,17 @@ RUN chown -R 1001:1001 /usr/local/nginx/html/static /opt/app-root/src
 # Change perms on target/deploy directory to 777
 RUN chmod -R 777 /usr/local/nginx/html/static /opt/app-root/src
 
-# This default user is created in the openshift/base-centos7 image
-USER 1001
 
-#EXPOSE 映射端口
-EXPOSE 80
 
 # Copy the S2I scripts to /usr/libexec/s2i, since openshift/base-centos7 image
 # sets io.openshift.s2i.scripts-url label that way.
 COPY ./s2i/bin/ /usr/libexec/s2i
 RUN chmod -R 777 /usr/libexec/s2i
 
+# This default user is created in the openshift/base-centos7 image
+USER 1001
+
+#EXPOSE 映射端口
+EXPOSE 80
 # Set the default CMD for the image
 CMD ["/usr/libexec/s2i/usage"]
