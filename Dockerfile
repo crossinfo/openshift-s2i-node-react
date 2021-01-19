@@ -12,7 +12,7 @@ LABEL io.k8s.description="Platform for building frontend" \
       io.openshift.tags="builder,etc."
 
 #安装开发依赖
-RUN yum install -y pcre-devel wget net-tools gcc zlib zlib-devel make openssl-devel
+RUN yum install -y pcre-devel wget net-tools gcc zlib zlib-devel make openssl-devel yarn
 
 #ADD 下载node
 RUN curl -O  https://nodejs.org/dist/v14.15.4/node-v14.15.4-linux-x64.tar.xz 
