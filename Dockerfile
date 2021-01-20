@@ -42,10 +42,9 @@ RUN rm /usr/local/nginx/html/index.html
 RUN mkdir -p /usr/local/nginx/html/static
 #COPY dist/ /usr/local/nginx/html/static
  
-
 # Drop the root user and make the content of /opt/openshift owned by user 1001
 RUN chown -R 1001:1001 /usr/local/nginx/html/static /opt/app-root/src
-
+RUN usermod -aG adm webuser
 # Change perms on target/deploy directory to 777
 RUN chmod -R 777 /usr/local/nginx/html/static /opt/app-root/src
 
