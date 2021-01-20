@@ -12,6 +12,7 @@ LABEL io.k8s.description="Platform for building frontend" \
       io.openshift.tags="builder,etc."
 #yarn
 RUN curl --silent --location https://rpm.nodesource.com/setup_8.x | bash -
+RUN curl -sL https://dl.yarnpkg.com/rpm/yarn.repo  | tee /etc/yum.repos.d/yarn.repo
 RUN yum install -y yarn
 #安装开发依赖
 RUN yum install -y pcre-devel wget net-tools gcc zlib zlib-devel make openssl-devel
