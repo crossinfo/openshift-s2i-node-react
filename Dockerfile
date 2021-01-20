@@ -11,7 +11,7 @@ LABEL io.k8s.description="Platform for building frontend" \
       io.openshift.expose-services="80:http,443:https" \
       io.openshift.tags="builder,etc."
 #yarn
-RUN curl --silent --location https://rpm.nodesource.com/setup_8.x | bash -
+RUN curl --silent --location https://rpm.nodesource.com/setup_14.x | bash -
 RUN curl -sL https://dl.yarnpkg.com/rpm/yarn.repo  | tee /etc/yum.repos.d/yarn.repo
 RUN yum install -y yarn
 #安装开发依赖
