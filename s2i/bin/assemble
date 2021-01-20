@@ -19,7 +19,7 @@ if [ "$(ls /tmp/artifacts/ 2>/dev/null)" ]; then
   mv /tmp/artifacts/* ./
 fi
 
-DEPLOY_DIR=/usr/local/nginx/html/
+DEPLOY_DIR=/usr/local/nginx/html/static
 echo "---> Set target directory to $DEPLOY_DIR ..."
 
 echo "---> Installing application source..."
