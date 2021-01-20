@@ -29,7 +29,7 @@ RUN tar -zxf nginx-1.15.3.tar.gz
 RUN mkdir -p /usr/local/nginx
 RUN cd nginx-1.15.3 && ./configure && make && make install
 RUN ln -s /usr/local/nginx/sbin/* /usr/local/sbin/
-
+RUN chmod 777 /usr/local/sbin/nginx
 #RUN 清除yum包
 RUN yum clean all -y
 
