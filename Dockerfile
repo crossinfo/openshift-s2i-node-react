@@ -47,6 +47,7 @@ RUN chown -R 1001:1001 /usr/local/nginx/html/static /opt/app-root/src
 # Change perms on target/deploy directory to 777
 RUN chmod -R 777 /usr/local/nginx/html/static /opt/app-root/src
 
+RUN chmod -R 777 /usr/local/nginx/
 
 
 # Copy the S2I scripts to /usr/libexec/s2i, since openshift/base-centos7 image
