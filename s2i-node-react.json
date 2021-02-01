@@ -95,7 +95,8 @@
           "dockerStrategy": {
             "from": {
               "kind": "ImageStreamTag",
-              "name": "nginx:1.12"
+              "name": "nginx:1.12",
+              "namespace": "openshift"
             },
             "env": [
               {
