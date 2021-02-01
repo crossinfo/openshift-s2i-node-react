@@ -9,7 +9,7 @@
       "name": "APP_NAME",
       "displayName": "Application Name",
       "description": "Application name",
-      "value": ""
+      "value": "frontend-"
     },
     {
       "name": "GIT_URI",
@@ -20,11 +20,16 @@
     {
       "description": "Git branch/tag reference",
       "name": "GIT_REF",
-      "value": "master"
+      "value": "cvt"
     },
     {
       "description": "Git Directory",
       "name": "CONTEXT_DIR"
+    },
+    {
+      "description": "Frontend env",
+      "name": "FRONTEND_ENV",
+      "value": "dev"
     }
   ],
   "objects": [
@@ -80,34 +85,37 @@
         "source": {
           "git": {
             "uri": "${GIT_URI}",
-	    "ref": "${GIT_REF}"
+            "ref": "${GIT_REF}"
           },
           "secrets": [],
-	  "contextDir": "${CONTEXT_DIR}",
+          "contextDir": "${CONTEXT_DIR}",
           "type": "Git"
         },
         "strategy": {
           "sourceStrategy": {
             "from": {
               "kind": "ImageStreamTag",
-	      "name": "node-react:latest"
+              "name": "node-react:latest"
             },
-	    "env": [
-
-	    ]
+            "env": [
+              {
+                "name": "FRONTEND_ENV",
+                "value": "${FRONTEND_ENV}"
+              }
+            ]
           },
           "type": "Source"
         },
         "triggers": [
           {
             "github": {
-		"secret": "secret"
+              "secret": "secret"
             },
             "type": "GitHub"
           },
           {
             "generic": {
-		"secret": "secret"
+              "secret": "secret"
             },
             "type": "Generic"
           },
