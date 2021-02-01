@@ -93,6 +93,10 @@
         },
         "strategy": {
           "sourceStrategy": {
+            "from": {
+              "kind": "ImageStreamTag",
+              "name": "${APP_NAME}:latest"
+            },
             "env": [
               {
                 "name": "FRONTEND_ENV",
@@ -100,7 +104,7 @@
               }
             ]
           },
-          "type": "Docker"
+          "type": "Source"
         },
         "triggers": [
           {
