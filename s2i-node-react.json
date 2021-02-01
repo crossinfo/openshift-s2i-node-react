@@ -93,10 +93,6 @@
         },
         "strategy": {
           "sourceStrategy": {
-            "from": {
-              "kind": "ImageStreamTag",
-              "name": "node-react:latest"
-            },
             "env": [
               {
                 "name": "FRONTEND_ENV",
