@@ -92,10 +92,10 @@
           "type": "Git"
         },
         "strategy": {
-          "sourceStrategy": {
+          "dockerStrategy": {
             "from": {
               "kind": "ImageStreamTag",
-              "name": "${APP_NAME}:latest"
+              "name": "nginx:1.12"
             },
             "env": [
               {
@@ -104,7 +104,7 @@
               }
             ]
           },
-          "type": "Source"
+          "type": "Docker"
         },
         "triggers": [
           {
