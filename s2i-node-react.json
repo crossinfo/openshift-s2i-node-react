@@ -29,7 +29,7 @@
     {
       "description": "Frontend env",
       "name": "FRONTEND_ENV",
-      "value": "dev"
+      "value": "test"
     }
   ],
   "objects": [
